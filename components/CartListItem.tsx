@@ -11,13 +11,12 @@ type CartListItemProps = {
 };
 
 const CartListItem = ({ cartItem }: CartListItemProps) => {
-  const {  } = useCart();
+  const { updateQuantity } = useCart();
 
   return (
     <View style={styles.container}>
       <Image
-        path={cartItem.product.image}
-        fallback={defaultPizzaImage}
+       source={{ uri: cartItem.product.image || defaultPizzaImage}}
         style={styles.image}
         resizeMode="contain"
       />
